@@ -1,0 +1,18 @@
+---
+- name: create a vm from a template
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: clone the template
+    vmware_guest:
+      hostname: 192.168.124.128
+      username: root
+      password: lol148635LOL
+      validate_certs: False
+      name: vm_cloned
+      template: VM2
+      datastore: Disque D
+      folder: /
+      state: poweredon
+      wait_for_ip_address: yes
